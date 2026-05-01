@@ -76,7 +76,8 @@ def swish(x):
     return wrap_like(x, arr / (1.0 + np.exp(-clipped)))
 
 
-silu = swish
+def silu(x):
+    return swish(x)
 
 
 def gelu(x, approximate: bool = True):
@@ -121,7 +122,8 @@ def hard_silu(x):
     return wrap_like(x, arr * np.clip(arr / 6.0 + 0.5, 0.0, 1.0))
 
 
-hard_swish = hard_silu
+def hard_swish(x):
+    return hard_silu(x)
 
 
 def exponential(x):
