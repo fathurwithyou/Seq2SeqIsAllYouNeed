@@ -1,0 +1,38 @@
+[project]
+name = "seq2seqisallyouneed"
+version = "0.1.0"
+description = "From-scratch NumPy implementation of CNN, SimpleRNN, and LSTM forward propagation with a Keras-inspired API and project structure for IF3270 Tugas Besar 2."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "numpy>=1.26",
+    "pillow>=10.0",
+    "tensorflow>=2.21.0",
+]
+
+[project.optional-dependencies]
+full = [
+    "matplotlib>=3.8",
+    "scikit-learn>=1.4",
+    "nltk>=3.8",
+]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.5",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["seq2seq*", "experiments*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.3",
+]
