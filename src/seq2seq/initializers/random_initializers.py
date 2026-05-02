@@ -119,7 +119,6 @@ class VarianceScaling(RandomInitializer):
 
         stddev = math.sqrt(scale)
         if self.distribution == "truncated_normal":
-            # Match Keras' variance correction for values truncated at 2 stddev.
             stddev = stddev / 0.87962566103423978
         return RandomNormal(0.0, stddev, seed=self.seed)(shape, dtype=dtype)
 
