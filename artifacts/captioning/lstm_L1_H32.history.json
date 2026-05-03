@@ -1,0 +1,39 @@
+{
+  "config": {
+    "features": "/Users/ellipsis/Documents/Seq2SeqIsAllYouNeed/artifacts/flickr8k_features.npy",
+    "paths_file": "/Users/ellipsis/Documents/Seq2SeqIsAllYouNeed/artifacts/flickr8k_paths.txt",
+    "vocab": "/Users/ellipsis/Documents/Seq2SeqIsAllYouNeed/artifacts/vocab.json",
+    "captions_json": "/Users/ellipsis/Documents/Seq2SeqIsAllYouNeed/artifacts/captions_tokens.json",
+    "output_dir": "/Users/ellipsis/Documents/Seq2SeqIsAllYouNeed/artifacts/captioning",
+    "rnn_type": "lstm",
+    "num_layers": 1,
+    "hidden_size": 32,
+    "embed_dim": 64,
+    "max_length": 12,
+    "batch_size": 8,
+    "epochs": 5,
+    "learning_rate": 0.001,
+    "validation_fraction": 0.1,
+    "seed": 0
+  },
+  "history": {
+    "loss": [
+      4.603862762451172,
+      4.042706489562988,
+      3.8700265884399414,
+      3.7718539237976074,
+      3.6964433193206787
+    ],
+    "val_loss": [
+      4.1874284744262695,
+      3.9622344970703125,
+      3.8777973651885986,
+      3.8229520320892334,
+      3.7941930294036865
+    ]
+  },
+  "feature_dim": 1280,
+  "vocab_size": 5156,
+  "num_train_examples": 36410,
+  "num_validation_examples": 4045
+}

@@ -1,0 +1,153 @@
+{
+  "results": {
+    "scratch": {
+      "bleu_4": 1.1666701713586031e-05,
+      "meteor": 0.16542126649861166,
+      "seconds": 14.16963633839623,
+      "seconds_per_image": 0.0017512836903221148
+    }
+  },
+  "num_evaluated": 8091,
+  "qualitative": [
+    {
+      "image": "1000268201_693b08cb0e.jpg",
+      "scratch_hypothesis": "man a and are on in of",
+      "keras_hypothesis": null,
+      "references": [
+        "a child in a pink dress is climbing up a set of stairs in an entry way",
+        "a girl going into a wooden building",
+        "a little girl climbing into a wooden playhouse",
+        "a little girl climbing the stairs to her playhouse",
+        "a little girl in a pink dress going into a wooden cabin"
+      ]
+    },
+    {
+      "image": "1001773457_577c3a7d70.jpg",
+      "scratch_hypothesis": "dogs a and dog in snow",
+      "keras_hypothesis": null,
+      "references": [
+        "a black dog and a spotted dog are fighting",
+        "a black dog and a tri colored dog playing with each other on the road",
+        "a black dog and a white dog with brown spots are staring at each other in the street",
+        "two dogs of different breeds looking at each other on the road",
+        "two dogs on pavement moving toward each other"
+      ]
+    },
+    {
+      "image": "1002674143_1b742ab4b8.jpg",
+      "scratch_hypothesis": "man a and dog a in water a",
+      "keras_hypothesis": null,
+      "references": [
+        "a little girl covered in paint sits in front of a painted rainbow with her hands in a bowl",
+        "a little girl is sitting in front of a large painted rainbow",
+        "a small girl in the grass plays with fingerpaints in front of a white canvas with a rainbow on it",
+        "there is a girl with pigtails sitting in front of a rainbow painting",
+        "young girl with pigtails painting outside in the grass"
+      ]
+    },
+    {
+      "image": "1003163366_44323f5815.jpg",
+      "scratch_hypothesis": "man a on is on bike a",
+      "keras_hypothesis": null,
+      "references": [
+        "a man lays on a bench while his dog sits by him",
+        "a man lays on the bench to which a white dog is also tied",
+        "a man sleeping on a bench outside with a white and black dog sitting next to him",
+        "a shirtless man lies on a park bench with his dog",
+        "man laying on bench holding leash of dog sitting on ground"
+      ]
+    },
+    {
+      "image": "1007129816_e794419615.jpg",
+      "scratch_hypothesis": "man a on is on bike a",
+      "keras_hypothesis": null,
+      "references": [
+        "a man in an orange hat starring at something",
+        "a man wears an orange hat and glasses",
+        "a man with gauges and glasses is wearing a blitz hat",
+        "a man with glasses is wearing a beer can crocheted hat",
+        "the man with pierced ears is wearing glasses and an orange hat"
+      ]
+    },
+    {
+      "image": "1007320043_627395c3d8.jpg",
+      "scratch_hypothesis": "man a on is on bike a",
+      "keras_hypothesis": null,
+      "references": [
+        "a child playing on a rope net",
+        "a little girl climbing on red roping",
+        "a little girl in pink climbs a rope bridge at the park",
+        "a small child grips onto the red ropes at the playground",
+        "the small child climbs on a red ropes on a playground"
+      ]
+    },
+    {
+      "image": "1009434119_febe49276a.jpg",
+      "scratch_hypothesis": "dog a dog a dog the",
+      "keras_hypothesis": null,
+      "references": [
+        "a black and white dog is running in a grassy garden surrounded by a white fence",
+        "a black and white dog is running through the grass",
+        "a boston terrier is running in the grass",
+        "a boston terrier is running on lush green grass in front of a white fence",
+        "a dog runs on the green grass near a wooden fence"
+      ]
+    },
+    {
+      "image": "1012212859_01547e3f17.jpg",
+      "scratch_hypothesis": "dog a dog a dog the",
+      "keras_hypothesis": null,
+      "references": [
+        "a dog shakes its head near the shore a red ball next to it",
+        "a white dog shakes on the edge of a beach with an orange ball",
+        "dog with orange ball at feet stands on shore shaking off water",
+        "white dog playing with a red ball on the shore near the water",
+        "white dog with brown ears standing near water with head turned to one side"
+      ]
+    },
+    {
+      "image": "1015118661_980735411b.jpg",
+      "scratch_hypothesis": "man a on is on bike a",
+      "keras_hypothesis": null,
+      "references": [
+        "a boy smiles in front of a stony wall in a city",
+        "a little boy is standing on the street while a man in overalls is working on a stone wall",
+        "a young boy runs aross the street",
+        "a young child is walking on a stone paved street with a metal pole and a man behind him",
+        "smiling boy in white shirt and blue jeans in front of rock wall with man in overalls behind him"
+      ]
+    },
+    {
+      "image": "1015584366_dfcec3c85a.jpg",
+      "scratch_hypothesis": "dog a dog a dog the",
+      "keras_hypothesis": null,
+      "references": [
+        "a black dog leaps over a log",
+        "a grey dog is leaping over a fallen tree",
+        "a large black dog leaps a fallen log",
+        "a mottled black and grey dog in a blue collar jumping over a fallen tree",
+        "the black dog jumped the tree stump"
+      ]
+    }
+  ],
+  "config": {
+    "features": "/Users/ellipsis/Documents/Seq2SeqIsAllYouNeed/artifacts/flickr8k_features.npy",
+    "paths_file": "/Users/ellipsis/Documents/Seq2SeqIsAllYouNeed/artifacts/flickr8k_paths.txt",
+    "vocab": "/Users/ellipsis/Documents/Seq2SeqIsAllYouNeed/artifacts/vocab.json",
+    "captions_json": "/Users/ellipsis/Documents/Seq2SeqIsAllYouNeed/artifacts/captions_tokens.json",
+    "output_dir": "/Users/ellipsis/Documents/Seq2SeqIsAllYouNeed/artifacts/captioning",
+    "rnn_type": "lstm",
+    "num_layers": 1,
+    "hidden_size": 32,
+    "embed_dim": 64,
+    "max_length": 12,
+    "batch_size": 8,
+    "epochs": 5,
+    "learning_rate": 0.001,
+    "validation_fraction": 0.1,
+    "seed": 0
+  },
+  "max_length": 20,
+  "decoding": "greedy",
+  "mode": "scratch"
+}
