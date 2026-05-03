@@ -8,6 +8,7 @@ import numpy as np
 
 from ..utils.image_utils import load_image_batch
 
+INTEL_KAGGLE_DATASET = "puneet6060/intel-image-classification"
 INTEL_CLASSES: tuple[str, ...] = (
     "buildings",
     "forest",
@@ -126,9 +127,27 @@ def load_intel_image_dataset(
     return {"train": train_split, "validation": validation, "test": test}
 
 
+def download_intel_image_dataset() -> Path:
+    cached_root = Path.home() / ".cache" / "kagglehub" / "datasets" / "puneet6060" / "intel-image-classification" / "versions"
+    if cached_root.is_dir():
+        cached_versions = sorted(cached_root.iterdir(), reverse=True)
+        for version in cached_versions:
+            if (version / "seg_train").is_dir() and (version / "seg_test").is_dir():
+                print("Path to dataset files:", version)
+                return version
+
+    import kagglehub
+
+    path = Path(kagglehub.dataset_download(INTEL_KAGGLE_DATASET))
+    print("Path to dataset files:", path)
+    return path
+
+
 __all__ = [
     "INTEL_CLASSES",
+    "INTEL_KAGGLE_DATASET",
     "IntelImageSplit",
+    "download_intel_image_dataset",
     "load_intel_image_split",
     "load_intel_image_dataset",
 ]
