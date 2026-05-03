@@ -5,6 +5,8 @@ description = "From-scratch NumPy implementation of CNN, SimpleRNN, and LSTM for
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
+    "kagglehub>=1.0.1",
+    "matplotlib>=3.10.8",
     "numpy>=1.26",
     "pillow>=10.0",
     "tensorflow>=2.21.0",
