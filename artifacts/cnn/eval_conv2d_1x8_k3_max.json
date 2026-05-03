@@ -1,0 +1,88 @@
+{
+  "kind": "cnn_scratch_eval",
+  "weights": "/Users/ellipsis/Documents/Seq2SeqIsAllYouNeed/artifacts/cnn/conv2d_1x8_k3_max.weights.h5",
+  "config_path": "/Users/ellipsis/Documents/Seq2SeqIsAllYouNeed/artifacts/cnn/conv2d_1x8_k3_max.history.json",
+  "config": {
+    "data_root": null,
+    "output_dir": "/Users/ellipsis/Documents/Seq2SeqIsAllYouNeed/artifacts/cnn",
+    "target_size": [
+      64,
+      64
+    ],
+    "layer_type": "conv2d",
+    "num_conv_layers": 1,
+    "filters": [
+      8
+    ],
+    "kernel_size": 3,
+    "pooling": "max",
+    "dense_units": 32,
+    "batch_size": 8,
+    "epochs": 5,
+    "learning_rate": 0.001,
+    "validation_fraction": 0.1,
+    "seed": 42
+  },
+  "keras_macro_f1": 0.49365157803762844,
+  "scratch_macro_f1": 0.49365157803762844,
+  "prediction_agreement": 1.0,
+  "scratch_confusion_matrix": [
+    [
+      55,
+      29,
+      43,
+      30,
+      36,
+      244
+    ],
+    [
+      0,
+      370,
+      3,
+      4,
+      4,
+      93
+    ],
+    [
+      7,
+      6,
+      427,
+      39,
+      32,
+      42
+    ],
+    [
+      18,
+      13,
+      155,
+      140,
+      164,
+      35
+    ],
+    [
+      13,
+      10,
+      182,
+      46,
+      223,
+      36
+    ],
+    [
+      22,
+      53,
+      12,
+      7,
+      31,
+      376
+    ]
+  ],
+  "class_names": [
+    "buildings",
+    "forest",
+    "glacier",
+    "mountain",
+    "sea",
+    "street"
+  ],
+  "num_evaluated": 3000
+}
