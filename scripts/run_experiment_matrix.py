@@ -32,6 +32,7 @@ def _cnn_commands(args) -> list[list[str]]:
     variants: list[dict] = [
         {"name": "baseline_shared", "layer_type": "conv2d", "num_layers": 1, "filters": [8], "kernel": 3, "pooling": "max"},
         {"name": "non_shared", "layer_type": "locally_connected", "num_layers": 1, "filters": [8], "kernel": 3, "pooling": "max"},
+        {"name": "non_shared_best_arch", "layer_type": "locally_connected", "num_layers": 3, "filters": [8, 12, 16], "kernel": 3, "pooling": "max"},
         {"name": "depth_1", "layer_type": "conv2d", "num_layers": 1, "filters": [8], "kernel": 3, "pooling": "max"},
         {"name": "depth_2", "layer_type": "conv2d", "num_layers": 2, "filters": [8, 12], "kernel": 3, "pooling": "max"},
         {"name": "depth_3", "layer_type": "conv2d", "num_layers": 3, "filters": [8, 12, 16], "kernel": 3, "pooling": "max"},

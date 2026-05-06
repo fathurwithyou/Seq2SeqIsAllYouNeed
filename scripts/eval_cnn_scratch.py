@@ -57,10 +57,11 @@ def _build_scratch(config: dict, input_shape: tuple[int, int, int], num_classes:
                 input_shape=current_shape,
                 name=f"locally_connected_{index}",
             )
+        pooling_layer = _pooling_layer(config["pooling"])
         model.add(layer)
-        model.add(_pooling_layer(config["pooling"]))
+        model.add(pooling_layer)
         dummy = np.zeros((1, *current_shape), dtype=np.float32)
-        current_shape = model(dummy).shape[1:]
+        current_shape = pooling_layer(layer(dummy)).shape[1:]
     model.add(GlobalAveragePooling2D())
     model.add(Dense(config["dense_units"], activation="relu", input_dim=filters[-1], name="head"))
     model.add(Dense(num_classes, activation="softmax", input_dim=config["dense_units"], name="classifier"))
