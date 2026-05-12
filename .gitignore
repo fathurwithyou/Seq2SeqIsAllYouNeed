@@ -208,3 +208,5 @@ __marimo__/
 
 artifacts/**/*.weights.h5
 artifacts/flickr8k_features.npy
+
+.DS_Store
