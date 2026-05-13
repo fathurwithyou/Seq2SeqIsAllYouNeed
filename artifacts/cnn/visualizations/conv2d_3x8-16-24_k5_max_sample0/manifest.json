@@ -1,0 +1,38 @@
+{
+  "weights": "artifacts/cnn/conv2d_3x8-16-24_k5_max.weights.h5",
+  "config": "artifacts/cnn/conv2d_3x8-16-24_k5_max.history.json",
+  "image": {
+    "source": "/Users/ellipsis/.cache/kagglehub/datasets/puneet6060/intel-image-classification/versions/2/seg_test/seg_test/buildings/20057.jpg",
+    "split": "test",
+    "sample_index": 0,
+    "label": 0,
+    "label_name": "buildings"
+  },
+  "layer_type": "conv2d",
+  "feature_layers": [
+    "conv2d_0",
+    "conv2d_1",
+    "conv2d_2"
+  ],
+  "feature_map_paths": {
+    "conv2d_0": "artifacts/cnn/visualizations/conv2d_3x8-16-24_k5_max_sample0/conv2d_0_feature_maps.png",
+    "conv2d_1": "artifacts/cnn/visualizations/conv2d_3x8-16-24_k5_max_sample0/conv2d_1_feature_maps.png",
+    "conv2d_2": "artifacts/cnn/visualizations/conv2d_3x8-16-24_k5_max_sample0/conv2d_2_feature_maps.png"
+  },
+  "gradcam_layer": "conv2d_2",
+  "input_image_path": "artifacts/cnn/visualizations/conv2d_3x8-16-24_k5_max_sample0/input_image.png",
+  "gradcam_heatmap_path": "artifacts/cnn/visualizations/conv2d_3x8-16-24_k5_max_sample0/conv2d_2_gradcam_heatmap.png",
+  "gradcam_overlay_path": "artifacts/cnn/visualizations/conv2d_3x8-16-24_k5_max_sample0/conv2d_2_gradcam_overlay.png",
+  "predicted_class": 0,
+  "predicted_class_name": "buildings",
+  "target_class": 0,
+  "target_class_name": "buildings",
+  "prediction_probabilities": [
+    0.9604649543762207,
+    0.0017943084239959717,
+    0.010532419197261333,
+    0.0010544181568548083,
+    0.013747663237154484,
+    0.012406310997903347
+  ]
+}
