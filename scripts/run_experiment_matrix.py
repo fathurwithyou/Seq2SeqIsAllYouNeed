@@ -29,22 +29,32 @@ def _cnn_commands(args) -> list[list[str]]:
     ]
     if args.intel_root:
         base.extend(["--data-root", args.intel_root])
-    variants: list[dict] = [
-        {"name": "baseline_shared", "layer_type": "conv2d", "num_layers": 1, "filters": [8], "kernel": 3, "pooling": "max"},
-        {"name": "non_shared", "layer_type": "locally_connected", "num_layers": 1, "filters": [8], "kernel": 3, "pooling": "max"},
-        {"name": "non_shared_best_arch", "layer_type": "locally_connected", "num_layers": 3, "filters": [8, 12, 16], "kernel": 3, "pooling": "max"},
-        {"name": "depth_1", "layer_type": "conv2d", "num_layers": 1, "filters": [8], "kernel": 3, "pooling": "max"},
-        {"name": "depth_2", "layer_type": "conv2d", "num_layers": 2, "filters": [8, 12], "kernel": 3, "pooling": "max"},
-        {"name": "depth_3", "layer_type": "conv2d", "num_layers": 3, "filters": [8, 12, 16], "kernel": 3, "pooling": "max"},
-        {"name": "filters_small", "layer_type": "conv2d", "num_layers": 2, "filters": [4, 8], "kernel": 3, "pooling": "max"},
-        {"name": "filters_medium", "layer_type": "conv2d", "num_layers": 2, "filters": [8, 12], "kernel": 3, "pooling": "max"},
-        {"name": "filters_large", "layer_type": "conv2d", "num_layers": 2, "filters": [12, 16], "kernel": 3, "pooling": "max"},
-        {"name": "kernel_3", "layer_type": "conv2d", "num_layers": 2, "filters": [8, 12], "kernel": 3, "pooling": "max"},
-        {"name": "kernel_5", "layer_type": "conv2d", "num_layers": 2, "filters": [8, 12], "kernel": 5, "pooling": "max"},
-        {"name": "kernel_7", "layer_type": "conv2d", "num_layers": 2, "filters": [8, 12], "kernel": 7, "pooling": "max"},
-        {"name": "pool_max", "layer_type": "conv2d", "num_layers": 2, "filters": [8, 12], "kernel": 3, "pooling": "max"},
-        {"name": "pool_average", "layer_type": "conv2d", "num_layers": 2, "filters": [8, 12], "kernel": 3, "pooling": "average"},
-    ]
+    
+    depths = [2, 3]
+    filter_options = ["small", "medium"]
+    kernels = [3, 5]
+    poolings = ["max", "average"]
+
+    variants = []
+    for d in depths:
+        for f_opt in filter_options:
+            for k in kernels:
+                for p in poolings:
+                    if f_opt == "small":
+                        f = [4, 8, 12][:d]
+                    else:
+                        f = [8, 16, 24][:d]
+                    variants.append({
+                        "layer_type": "conv2d",
+                        "num_layers": d,
+                        "filters": f,
+                        "kernel": k,
+                        "pooling": p
+                    })
+    
+    variants.append({"layer_type": "locally_connected", "num_layers": 1, "filters": [8], "kernel": 3, "pooling": "max"})
+    variants.append({"layer_type": "locally_connected", "num_layers": 3, "filters": [8, 16, 24], "kernel": 3, "pooling": "max"})
+
     commands = []
     seen: set[tuple] = set()
     for variant in variants:
