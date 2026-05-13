@@ -15,6 +15,29 @@ Supported experiments:
 - Keras vs from-scratch inference comparison.
 - Metric summaries, loss plots, and LaTeX report generation.
 
+## Bonus Checklist
+
+- [x] CNN intermediate feature map visualisation.
+  - Implemented through convolutional-layer activation extraction.
+  - Example outputs are stored under `artifacts/cnn/visualizations/`.
+- [x] CNN Grad-CAM visualisation.
+  - Implemented for trained CNN artifacts to highlight image regions that most
+    influence the predicted class.
+  - Example outputs include Grad-CAM heatmaps and image overlays under
+    `artifacts/cnn/visualizations/`.
+- [ ] RNN/LSTM init-inject image captioning.
+  - The implemented captioning architecture is pre-inject.
+- [x] RNN/LSTM beam search decoder.
+  - Implemented with configurable `beam_width`.
+  - Evaluated through `scripts/eval_caption.py --decoding beam`.
+- [x] Batch inference.
+  - CNN, pooling, recurrent layers, image loading, and caption decoding support
+    batched inputs through the leading batch dimension.
+- [ ] Backward propagation for all used layers.
+  - The project includes an autodiff-style `Tensor.backward()` core for tensor
+    operations, but full backward propagation for every CNN/RNN/LSTM layer used
+    in the assignment is not implemented.
+
 ## Repository Structure
 
 ```text
@@ -185,6 +208,19 @@ uv run python scripts/eval_cnn_scratch.py \
   --weights artifacts/cnn/conv2d_1x8_k3_max.weights.h5 \
   --config artifacts/cnn/conv2d_1x8_k3_max.history.json \
   --output artifacts/cnn/eval_conv2d_1x8_k3_max.json
+```
+
+CNN feature map and Grad-CAM visualisation:
+
+```bash
+uv run python scripts/visualize_cnn_features.py \
+  --weights artifacts/cnn/conv2d_3x8-16-24_k5_max.weights.h5 \
+  --config artifacts/cnn/conv2d_3x8-16-24_k5_max.history.json \
+  --output-dir artifacts/cnn/visualizations/conv2d_3x8-16-24_k5_max_sample0 \
+  --split test \
+  --sample-index 0 \
+  --max-feature-maps 16 \
+  --columns 4
 ```
 
 ## Image Captioning Experiments
